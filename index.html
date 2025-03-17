@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Portfolio</title>
+    <link rel="script" src="script.js">
+    <link rel="shortcut icon" href="weblogo.jpeg" name="shortic" type="x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>SANIKA<span>KHIRE</span></h1>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Creating Spaces That Inspire</h1>
+            <p>INTERIOR DESIGN THAT TRANSFORMS THE WAY YOU LIVE AND WORK</p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="/placeholder.svg?height=400&width=400" alt="Interior Designer Portrait">
+                </div>
+                <div class="about-text">
+                    <h3>Passionate Interior Designer</h3>
+                    <p>With over 10 years of experience in transforming spaces, I bring a unique blend of creativity, functionality, and aesthetic sensibility to every project. My design philosophy centers around creating harmonious environments that reflect the personality and lifestyle of my clients.</p>
+                    <p>I believe that great design should not only be beautiful but also enhance the way people live and interact with their spaces. Whether it's a cozy home, a productive office, or an inviting commercial space, I approach each project with dedication and attention to detail.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span>10+</span>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <span>150+</span>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <span>95%</span>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Space Planning</h3>
+                    <p>Creating functional and efficient layouts that maximize the potential of any space.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Color Theory</h3>
+                    <p>Expert knowledge of color psychology and how to create harmonious color schemes.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-couch"></i>
+                    <h3>Furniture Selection</h3>
+                    <p>Curating pieces that balance aesthetics, comfort, and functionality.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting Design</h3>
+                    <p>Creating layered lighting plans that enhance atmosphere and functionality.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>3D Visualization</h3>
+                    <p>Bringing designs to life with detailed 3D renderings and walkthroughs.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Project Management</h3>
+                    <p>Overseeing projects from concept to completion with meticulous attention to detail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="residential">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Modern Living Room">
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern Minimalist Home</h3>
+                        <p>A clean, contemporary design for a family residence in the city.</p>
+                        <span class="project-category">Residential</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="commercial">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Office Space">
+                    </div>
+                    <div class="project-info">
+                        <h3>Creative Agency Office</h3>
+                        <p>An inspiring workspace designed to foster creativity and collaboration.</p>
+                        <span class="project-category">Commercial</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="hospitality">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Boutique Hotel Lobby">
+                    </div>
+                    <div class="project-info">
+                        <h3>Boutique Hotel Renovation</h3>
+                        <p>A luxurious yet welcoming atmosphere for a boutique hotel lobby.</p>
+                        <span class="project-category">Hospitality</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="residential">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Kitchen Design">
+                    </div>
+                    <div class="project-info">
+                        <h3>Gourmet Kitchen Remodel</h3>
+                        <p>A functional and elegant kitchen for cooking enthusiasts.</p>
+                        <span class="project-category">Residential</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="commercial">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Retail Store">
+                    </div>
+                    <div class="project-info">
+                        <h3>Luxury Retail Space</h3>
+                        <p>An upscale shopping environment that enhances the customer experience.</p>
+                        <span class="project-category">Commercial</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="hospitality">
+                    <div class="project-img">
+                        <img src="/placeholder.svg?height=600&width=800" alt="Restaurant Interior">
+                    </div>
+                    <div class="project-info">
+                        <h3>Fine Dining Restaurant</h3>
+                        <p>An elegant dining space that complements the culinary experience.</p>
+                        <span class="project-category">Hospitality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>123 Design Street, Creative City</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>mayureshchaubal57@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Houzz"><i class="fab fa-houzz"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Design Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
