@@ -771,7 +771,7 @@ input:checked + .slider:before {
 
 /* Typewriter Effect */
 .typewriter {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 30px;
     overflow: hidden;
     border-right: 2px solid var(--primary-color);
