@@ -7,6 +7,14 @@ const navLinksItems = document.querySelectorAll('.nav-links a');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+// Initialize EmailJS
+(function() {
+    // Initialize EmailJS with your user ID
+    // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+    emailjs.init('YOUR_USER_ID');
+})();
 
 // Check for saved theme preference or use preferred color scheme
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -97,10 +105,21 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Contact Form Submission
+// Contact Form Submission with EmailJS
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    // Add loading state
+    submitBtn.classList.add('loading');
+    if (!submitBtn.querySelector('.spinner')) {
+        const spinner = document.createElement('span');
+        spinner.className = 'spinner';
+        submitBtn.appendChild(spinner);
+    }
+    
+    // Get form data
     const formData = new FormData(this);
     const name = formData.get('name');
     const email = formData.get('email');
@@ -110,30 +129,56 @@ contactForm.addEventListener('submit', function(e) {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
+        showFormStatus('Please enter a valid email address', 'error');
+        removeLoadingState();
         return;
     }
     
-    // Normally, you would send this data to a server
-    // For this example, we'll simulate sending an email
-    sendEmail(name, email, subject, message);
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: 'mayureshchaubal57@gmail.com'
+    };
+    
+    // Send email using EmailJS
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            showFormStatus('Thank you for your message! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            showFormStatus('Failed to send message. Please try again later.', 'error');
+        })
+        .finally(() => {
+            removeLoadingState();
+        });
 });
 
-// Function to simulate sending an email
-function sendEmail(name, email, subject, message) {
-    // In a real application, you would use a server-side solution
-    // or a service like EmailJS, Formspree, etc.
+// Helper function to show form status
+function showFormStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = type;
+    formStatus.style.display = 'block';
     
-    // For demonstration purposes, we'll just show a success message
-    alert(`Thank you for your message, ${name}! We'll get back to you soon.`);
-    contactForm.reset();
-    
-    console.log({
-        to: 'mayureshchaubal57@gmail.com',
-        from: email,
-        subject: subject,
-        message: message
-    });
+    // Hide status message after 5 seconds
+    setTimeout(() => {
+        formStatus.style.display = 'none';
+    }, 5000);
+}
+
+// Helper function to remove loading state
+function removeLoadingState() {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.classList.remove('loading');
+    const spinner = submitBtn.querySelector('.spinner');
+    if (spinner) {
+        spinner.remove();
+    }
 }
 
 // Smooth scrolling for anchor links

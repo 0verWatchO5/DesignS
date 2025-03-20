@@ -48,9 +48,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     /* margin-bottom: 20px; */
 }
-#shortic {
-    border-radius: 20px;
-}
+
 p {
     margin-bottom: 15px;
 }
@@ -144,6 +142,13 @@ header {
     padding: 0;
 }
 
+.logo img {
+    width: 90px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    /* box-shadow: var(--shadow); */
+}
+
 .logo span {
     color: var(--primary-color);
 }
@@ -157,7 +162,7 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
-    /* margin-right: 30px; */
+    margin-right: 30px;
 }
 
 .nav-links li {
@@ -547,6 +552,52 @@ input:checked + .slider:before {
     resize: none;
 }
 
+/* Form status styling */
+#form-status {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: none;
+}
+
+#form-status.success {
+    display: block;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+#form-status.error {
+    display: block;
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+}
+
+/* Loading spinner for form submission */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.btn.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
 /* Footer */
 footer {
     background-color: var(--secondary-color);
@@ -597,22 +648,17 @@ footer {
 
 @media screen and (max-width: 768px) {
     /* Mobile Navigation */
-    .nav-container{
-        margin-left: -10px;
-        justify-content: space-between;
-        padding-right: 40px;
-    }
     .nav-links {
         position: fixed;
         top: var(--header-height);
-        right: -80%;
+        right: -100%;
         width: 70%;
         height: calc(100vh - var(--header-height));
         background-color: var(--bg-color);
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding-top: 30px;
+        padding-top: 50px;
         transition: var(--transition);
         box-shadow: var(--shadow);
         margin-right: 0;
@@ -628,10 +674,9 @@ footer {
     
     .hamburger {
         display: block;
-        margin-right: 20px; /* Adjust this if needed */
-        padding-right: 20px; /* Add some padding */
+        /* margin-right: 20px; Adjust this if needed */
+        /* padding-right: 20px; Add some padding */
     }
-    
     
     .hamburger.active .line:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);

@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interior Design Portfolio</title>
-    <link rel="script" src="script.js">
-    <link rel="shortcut icon" href="weblogo.jpeg" name="shortic" type="x-icon">
+    <link rel="shortcut icon" href="x-icon.png" type="x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <h1>SANIKA<span>KHIRE</span></h1>
+                <a href="#home">
+                    <img src="logoimg.png" alt="Design Studio Logo" width="60" height="60">
+                </a>
             </div>
             <div class="nav-container">
                 <nav>
@@ -238,6 +241,7 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                     </div>
+                    <div id="form-status"></div>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
