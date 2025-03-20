@@ -308,8 +308,7 @@ header {
 }
 
 .logo img {
-    width: 60px;
-    height: 60px;
+    width: 18%;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -1986,6 +1985,22 @@ footer {
 [data-aos].aos-animate {
     opacity: 1;
     transform: translateX(0) translateY(0) scale(1);
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    border: 3px solid var(--primary-light);
 }
 
 /* Responsive Design */
