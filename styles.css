@@ -2156,6 +2156,11 @@ footer {
     .testimonial-content {
         padding: 30px 20px;
     }
+    .logo img {
+        min-width: 80px;
+        max-width: 100px; /* Ensure it doesn't grow too large */
+        border-radius: 50%;
+    }
 }
 
 @media screen and (max-width: 576px) {
