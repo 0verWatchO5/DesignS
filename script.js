@@ -140,7 +140,7 @@ contactForm.addEventListener('submit', function(e) {
         from_email: email,
         subject: subject,
         message: message,
-        to_email: 'mayureshchaubal57@gmail.com'
+        to_email: 'khiresanika@gmail.com'
     };
     
     // Send email using EmailJS
